@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menú Principal -->
+    <menuitem id="menu_icanh_root"
+              name="ICANH Vehículos"
+              sequence="100"
+              web_icon="odoo_module,static/description/icon.png"/>
+
+    <!-- Menú Marcas -->
+    <menuitem id="menu_marca_vehiculo"
+              name="Marcas"
+              parent="menu_icanh_root"
+              action="action_marca_vehiculo"
+              sequence="10"/>
+
+    <!-- Menú Personas -->
+    <menuitem id="menu_persona"
+              name="Personas"
+              parent="menu_icanh_root"
+              action="action_persona"
+              sequence="20"/>
+
+    <!-- Menú Vehículos -->
+    <menuitem id="menu_vehiculo"
+              name="Vehículos"
+              parent="menu_icanh_root"
+              action="action_vehiculo"
+              sequence="30"/>
+</odoo>
+

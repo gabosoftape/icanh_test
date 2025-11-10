@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista list (Lista) -->
+    <record id="view_vehiculo_list" model="ir.ui.view">
+        <field name="name">icanh.vehiculo.list</field>
+        <field name="model">icanh.vehiculo</field>
+        <field name="arch" type="xml">
+            <list string="Vehículos" decoration-info="propietario_count > 0">
+                <field name="modelo"/>
+                <field name="marca_id"/>
+                <field name="numero_puertas"/>
+                <field name="color"/>
+                <field name="propietario_count" widget="statinfo" string="Propietarios"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="view_vehiculo_form" model="ir.ui.view">
+        <field name="name">icanh.vehiculo.form</field>
+        <field name="model">icanh.vehiculo</field>
+        <field name="arch" type="xml">
+            <form string="Vehículo">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="modelo"/>
+                            <field name="marca_id" options="{'no_create': True}"/>
+                            <field name="numero_puertas"/>
+                            <field name="color"/>
+                        </group>
+                        <group>
+                            <field name="propietario_count" widget="statinfo" string="Propietarios"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Propietarios" name="propietarios">
+                            <field name="propietario_ids" widget="many2many_tags" nolabel="1" options="{'no_create': True}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Kanban -->
+    <record id="view_vehiculo_kanban" model="ir.ui.view">
+        <field name="name">icanh.vehiculo.kanban</field>
+        <field name="model">icanh.vehiculo</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="marca_id" class="o_kanban_small_column">
+                <field name="modelo"/>
+                <field name="marca_id"/>
+                <field name="color"/>
+                <field name="numero_puertas"/>
+                <field name="propietario_count"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="modelo"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <div>
+                                        <i class="fa fa-tag"/> <field name="marca_id"/>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-paint-brush"/> <field name="color"/>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-door-open"/> <field name="numero_puertas"/> Puertas
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-users"/> <field name="propietario_count"/> Propietarios
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Vista Search -->
+    <record id="view_vehiculo_search" model="ir.ui.view">
+        <field name="name">icanh.vehiculo.search</field>
+        <field name="model">icanh.vehiculo</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Vehículos">
+                <field name="modelo" string="Modelo"/>
+                <field name="marca_id" string="Marca"/>
+                <field name="color" string="Color"/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Marca" name="group_marca" context="{'group_by': 'marca_id'}"/>
+                    <filter string="Color" name="group_color" context="{'group_by': 'color'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción -->
+    <record id="action_vehiculo" model="ir.actions.act_window">
+        <field name="name">Vehículos</field>
+        <field name="res_model">icanh.vehiculo</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea tu primer vehículo
+            </p>
+            <p>
+                Los vehículos pueden tener uno o más propietarios.
+            </p>
+        </field>
+    </record>
+</odoo>
+

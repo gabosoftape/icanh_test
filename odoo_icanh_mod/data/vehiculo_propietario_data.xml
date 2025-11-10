@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Este archivo define la tabla de relación many2many entre vehículos y personas -->
+    <!-- La tabla se crea automáticamente por Odoo basándose en la definición Many2many -->
+    <!-- No se requieren datos iniciales, pero este archivo puede usarse para seed data si es necesario -->
+</odoo>
+

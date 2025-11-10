@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_icanh_marca_vehiculo_user,icanh.marca.vehiculo.user,model_icanh_marca_vehiculo,base.group_user,1,1,1,1
+access_icanh_persona_user,icanh.persona.user,model_icanh_persona,base.group_user,1,1,1,1
+access_icanh_vehiculo_user,icanh.vehiculo.user,model_icanh_vehiculo,base.group_user,1,1,1,1
+
