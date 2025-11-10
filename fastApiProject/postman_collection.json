@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "vehiculos-api-collection",
+		"name": "API Gestión de Vehículos",
+		"description": "Colección de Postman para la API de Gestión de Vehículos (Marcas, Personas y Vehículos)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "fastapi-vehiculos"
+	},
+	"item": [
+		{
+			"name": "Marcas",
+			"item": [
+				{
+					"name": "Crear Marca",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre_marca\": \"Toyota\",\n    \"pais\": \"Japón\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/marcas/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "marcas", ""]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Marcas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/marcas/?skip=0&limit=100",
+							"host": ["{{base_url}}"],
+							"path": ["api", "marcas", ""],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Marca por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/marcas/{{marca_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "marcas", "{{marca_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Marca",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre_marca\": \"Toyota Motor Corporation\",\n    \"pais\": \"Japón\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/marcas/{{marca_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "marcas", "{{marca_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Marca",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/marcas/{{marca_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "marcas", "{{marca_id}}"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Crear Persona",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Juan Pérez\",\n    \"cedula\": \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/personas/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", ""]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Personas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/personas/?skip=0&limit=100",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", ""],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Persona por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/personas/{{persona_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", "{{persona_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Persona",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Juan Carlos Pérez\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/personas/{{persona_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", "{{persona_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Persona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/personas/{{persona_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", "{{persona_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Vehículos de Persona",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/personas/{{persona_id}}/vehiculos/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "personas", "{{persona_id}}", "vehiculos", ""]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehículos",
+			"item": [
+				{
+					"name": "Crear Vehículo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"modelo\": \"Corolla\",\n    \"marca_id\": {{marca_id}},\n    \"numero_puertas\": 4,\n    \"color\": \"Rojo\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", ""]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Vehículos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/?skip=0&limit=100",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", ""],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Vehículo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/{{vehiculo_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", "{{vehiculo_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Vehículo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"color\": \"Azul\",\n    \"numero_puertas\": 5\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/{{vehiculo_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", "{{vehiculo_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Vehículo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/{{vehiculo_id}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", "{{vehiculo_id}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Propietario a Vehículo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"persona_id\": {{persona_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/vehiculos/{{vehiculo_id}}/propietarios/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "vehiculos", "{{vehiculo_id}}", "propietarios", ""]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sistema",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/health",
+							"host": ["{{base_url}}"],
+							"path": ["health"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/",
+							"host": ["{{base_url}}"],
+							"path": [""]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "marca_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "persona_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "vehiculo_id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
+

@@ -96,11 +96,41 @@ La API estará disponible en: `http://localhost:8000`
 
 ## 🧪 Ejecutar pruebas
 
+### Pruebas Automatizadas
+
 ```bash
 pytest
 ```
 
+Para ejecutar con más detalles:
+```bash
+pytest -v
+```
+
+Para ejecutar un test específico:
+```bash
+pytest tests/test_api.py::test_crear_marca
+```
+
 Las pruebas se ejecutan contra PostgreSQL. Asegúrate de que la base de datos esté disponible o configura `TEST_DATABASE_URL` en las variables de entorno.
+
+**Cobertura de tests:**
+- ✅ CRUD completo para Marcas, Personas y Vehículos
+- ✅ Validaciones (duplicados, campos requeridos)
+- ✅ Relaciones (propietarios, vehículos por persona)
+- ✅ Casos de error (404, 400)
+- ✅ Flujo completo end-to-end
+
+### Pruebas con Postman
+
+Para pruebas manuales, importa la colección de Postman:
+
+1. Abre Postman
+2. Importa el archivo `postman_collection.json`
+3. Configura la variable `base_url` si es necesario (default: `http://localhost:8000`)
+4. Sigue el flujo de prueba recomendado en `POSTMAN_README.md`
+
+La colección incluye todos los endpoints organizados por categorías.
 
 ## 📚 Endpoints
 
