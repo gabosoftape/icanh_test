@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor>
+    <title>API Gestión de Vehículos - Documentación</title>
+    <parser>
+        <default-package-name>App</default-package-name>
+        <target>build/api-docs</target>
+    </parser>
+    <transformer>
+        <target>build/api-docs</target>
+    </transformer>
+    <transformations>
+        <transformation>
+            <type>xml</type>
+            <artifact>structure.xml</artifact>
+        </transformation>
+    </transformations>
+    <files>
+        <directory>app</directory>
+        <ignore>vendor/*</ignore>
+        <ignore>tests/*</ignore>
+    </files>
+    <logging>
+        <level>debug</level>
+        <paths>
+            <default>build/api-docs/log</default>
+        </paths>
+    </logging>
+</phpdocumentor>
+
+
