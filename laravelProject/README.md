@@ -162,3 +162,24 @@ El proyecto incluye:
 Este proyecto es parte de una prueba técnica.
 
 
+## 📷 Screenshots
+- **Home**
+![Captura de pantalla 2025-11-10 160938.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20160938.png)
+- **Login**
+![Captura de pantalla 2025-11-10 160948.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20160948.png)
+- **Sign Up** 
+![Captura de pantalla 2025-11-10 160955.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20160955.png)
+- **Dashboard** 
+![Captura de pantalla 2025-11-10 161020.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161020.png)
+- **Marcas**
+![Captura de pantalla 2025-11-10 161032.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161032.png)
+- **Personas**
+![Captura de pantalla 2025-11-10 161043.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161043.png)
+- **Vehiculos**
+![Captura de pantalla 2025-11-10 161057.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161057.png)
+- **Nueva Marca**
+![Captura de pantalla 2025-11-10 161113.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161113.png)
+- **Nueva Persona**
+![Captura de pantalla 2025-11-10 161123.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161123.png)
+- **Nuevo Vehiculo**
+![Captura de pantalla 2025-11-10 161133.png](docs%2Fimages%2FCaptura%20de%20pantalla%202025-11-10%20161133.png)
